@@ -7045,11 +7045,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\viet.anhtran\\source\\repos\\StringCalculator\\StringCalculator\\StringCalculator.csproj",
+      "projectUniqueName": "C:\\Users\\viet.anhtran\\Documents\\StringCalculator\\StringCalculator\\StringCalculator\\StringCalculator.csproj",
       "projectName": "StringCalculator",
-      "projectPath": "C:\\Users\\viet.anhtran\\source\\repos\\StringCalculator\\StringCalculator\\StringCalculator.csproj",
+      "projectPath": "C:\\Users\\viet.anhtran\\Documents\\StringCalculator\\StringCalculator\\StringCalculator\\StringCalculator.csproj",
       "packagesPath": "C:\\Users\\viet.anhtran\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\viet.anhtran\\source\\repos\\StringCalculator\\StringCalculator\\obj\\",
+      "outputPath": "C:\\Users\\viet.anhtran\\Documents\\StringCalculator\\StringCalculator\\StringCalculator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\viet.anhtran\\AppData\\Roaming\\NuGet\\NuGet.Config",
