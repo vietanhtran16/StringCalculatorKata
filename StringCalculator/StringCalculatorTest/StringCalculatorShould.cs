@@ -7,6 +7,7 @@ namespace StringCalculatorTest
     {
         [Theory]
         [InlineData(0, "")]
+        [InlineData(1, "1")]
         public void Add_ValidInputs_ReturnSum(int expected, string numbers)
         {
             var stringCalculator = new StringCalculator();
