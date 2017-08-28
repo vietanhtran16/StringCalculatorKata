@@ -23,5 +23,12 @@ namespace StringCalculatorTest
             var stringCalculator = new StringCalculator(delimiters);
             Assert.Equal(6, stringCalculator.Add("1\n2,3"));
         }
+
+        [Fact]
+        public void Add_CustomDelimiter()
+        {
+            var stringCalculator = new StringCalculator();
+            Assert.Equal(3, stringCalculator.Add("//;\n1;2"));
+        }
     }
 }
