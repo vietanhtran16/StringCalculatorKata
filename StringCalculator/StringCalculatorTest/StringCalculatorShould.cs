@@ -5,11 +5,12 @@ namespace StringCalculatorTest
 {
     public class StringCalculatorShould
     {
-        [Fact]
-        public void Add_WhenStringIsEmpty_ReturnZero()
+        [Theory]
+        [InlineData(0, "")]
+        public void Add_ValidInputs_ReturnSum(int expected, string numbers)
         {
             var stringCalculator = new StringCalculator();
-            Assert.Equal(0, stringCalculator.Add(""));
+            Assert.Equal(expected, stringCalculator.Add(numbers));
         }
     }
 }
