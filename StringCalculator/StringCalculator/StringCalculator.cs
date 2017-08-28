@@ -1,13 +1,17 @@
-﻿namespace StringCalculatorKata
+﻿using System;
+using System.Linq;
+
+namespace StringCalculatorKata
 {
     public class StringCalculator
     {
 
-        public int Add(string numbers)
+        public int Add(string sequencedNumbers)
         {
-            if (string.IsNullOrEmpty(numbers))
+            if (string.IsNullOrEmpty(sequencedNumbers))
                 return 0;
-            return int.Parse(numbers);
+            var numbers = sequencedNumbers.Split(',').Select(int.Parse).ToList();
+            return numbers.Sum();
         }
     }
 }
