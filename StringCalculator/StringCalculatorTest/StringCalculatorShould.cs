@@ -1,3 +1,4 @@
+using StringCalculatorKata;
 using Xunit;
 
 namespace StringCalculatorTest

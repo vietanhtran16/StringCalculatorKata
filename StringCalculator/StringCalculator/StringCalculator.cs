@@ -1,8 +1,11 @@
-﻿using System;
-
-namespace StringCalculator
+﻿namespace StringCalculatorKata
 {
-    public class Class1
+    public class StringCalculator
     {
+
+        public int Add(string numbers)
+        {
+            return 0;
+        }
     }
 }

@@ -7045,9 +7045,9 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\viet.anhtran\\Documents\\StringCalculator\\StringCalculator\\StringCalculator\\StringCalculator.csproj",
-      "projectName": "StringCalculator",
-      "projectPath": "C:\\Users\\viet.anhtran\\Documents\\StringCalculator\\StringCalculator\\StringCalculator\\StringCalculator.csproj",
+      "projectUniqueName": "C:\\Users\\viet.anhtran\\Documents\\StringCalculator\\StringCalculator\\StringCalculator\\StringCalculatorKata.csproj",
+      "projectName": "StringCalculatorKata",
+      "projectPath": "C:\\Users\\viet.anhtran\\Documents\\StringCalculator\\StringCalculator\\StringCalculator\\StringCalculatorKata.csproj",
       "packagesPath": "C:\\Users\\viet.anhtran\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\viet.anhtran\\Documents\\StringCalculator\\StringCalculator\\StringCalculator\\obj\\",
       "projectStyle": "PackageReference",
