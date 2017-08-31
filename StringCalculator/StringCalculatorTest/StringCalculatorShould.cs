@@ -1,5 +1,9 @@
+using System;
+using System.Security.Authentication;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StringCalculatorKata;
 using Xunit;
+using Assert = Xunit.Assert;
 
 namespace StringCalculatorTest
 {
@@ -29,6 +33,16 @@ namespace StringCalculatorTest
         {
             var stringCalculator = new StringCalculator();
             Assert.Equal(3, stringCalculator.Add("//;\n1;2"));
+        }
+
+        [Theory]
+        [ExpectedException(typeof(NegativeNumberException))]
+        [InlineData("negatives not allowed -1", "-1")]
+        public void Add_WithNegativeNumbers(string expected, string numbers)
+        {
+            var stringCalculator = new StringCalculator();
+            var exception = Assert.Throws<NegativeNumberException>(() => stringCalculator.Add(numbers));
+            Assert.Equal(expected, exception.Message);
         }
     }
 }
