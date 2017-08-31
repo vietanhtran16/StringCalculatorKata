@@ -7,20 +7,25 @@ namespace StringCalculatorKata
 {
     public class StringCalculator
     {
-        private char[] Delimiters { get; set; }
+        private char[] Delimiters { get; set; } 
+        private Validator Validator { get; set; }
 
         public StringCalculator()
         {
             Delimiters = new char[] { ',' };
+            Validator = new Validator();
         }
 
         public StringCalculator(char[] delimiters)
         {
             Delimiters = delimiters;
+            Validator = new Validator();
         }
 
         public int Add(string sequencedNumbers)
         {
+
+          
 
             if (string.IsNullOrEmpty(sequencedNumbers))
                 return 0;
@@ -43,32 +48,14 @@ namespace StringCalculatorKata
 
                 numbers = sequencedNumbers.Split(Delimiters).Select(int.Parse).ToList();
             }
-            int sum;
-            sum = AddNumbers(numbers);
-            return sum;
+
+
+
+            Validator.NegativeCheck(numbers);
+
+
+            return numbers.Sum();
+
         }
-
-        private int AddNumbers(List<int> numbers)
-        {
-            var sum = 0;
-            var negativeNumbers = new List<int>();
-            foreach (var number in numbers)
-            {
-                if (number < 0)
-                    negativeNumbers.Add(number);
-                else
-                {
-                    sum += number;
-                }
-
-
-            }
-            if (negativeNumbers.Count > 0)
-                throw new NegativeNumberException("negatives not allowed " + string.Join(",", negativeNumbers.ToArray()));
-
-            return sum;
-        }
-
-
     }
 }
