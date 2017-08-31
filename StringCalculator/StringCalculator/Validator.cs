@@ -7,15 +7,11 @@ namespace StringCalculatorKata
 {
     public class Validator
     {
-
-
-        //public List<int> IsDataValid()
-        //{
-        //    Remove
-
-
-        //    return null;
-        //}
+        
+        public List<int> IgnoreBigNumbers(List<int> numbers, int ceilingThreshold)
+        {
+            return numbers.Where(i => i <= ceilingThreshold).ToList();
+        }
 
 
         public void NegativeCheck(List<int> numbers)

@@ -34,5 +34,16 @@ namespace StringCalculatorTest
             exception = Assert.Throws<NegativeNumberException>(() => validator.NegativeCheck(numbers));
             Assert.Equal(expected, exception.Message);
         }
+
+        [Fact]
+        public void IgnoreBigNumbers_WithNumberOver1k()
+        {
+            var validator = new Validator();
+            
+            var numbers = new List<int>(){999, 1000, 1001};
+            var expected = new List<int>() {999, 1000};
+            var actual = validator.IgnoreBigNumbers(numbers, 1000);
+            Assert.Equal(expected, actual);
+        }
     }
 }
