@@ -34,18 +34,5 @@ namespace StringCalculatorTest
             var stringCalculator = new StringCalculator();
             Assert.Equal(3, stringCalculator.Add("//;\n1;2"));
         }
-
-        [Theory]
-        [ExpectedException(typeof(NegativeNumberException))]
-        [InlineData("negatives not allowed -1", "-1")]
-        [InlineData("negatives not allowed -1,-2", "-1,-2")]
-        [InlineData("negatives not allowed -1,-3", "-1,2,-3")]
-        [InlineData("negatives not allowed -1,-3", "-1,2,-3,4")]
-        public void Add_WithNegativeNumbers(string expected, string numbers)
-        {
-            var stringCalculator = new StringCalculator();
-            var exception = Assert.Throws<NegativeNumberException>(() => stringCalculator.Add(numbers));
-            Assert.Equal(expected, exception.Message);
-        }
     }
 }
