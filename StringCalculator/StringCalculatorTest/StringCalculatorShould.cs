@@ -38,6 +38,9 @@ namespace StringCalculatorTest
         [Theory]
         [ExpectedException(typeof(NegativeNumberException))]
         [InlineData("negatives not allowed -1", "-1")]
+        [InlineData("negatives not allowed -1,-2", "-1,-2")]
+        [InlineData("negatives not allowed -1,-3", "-1,2,-3")]
+        [InlineData("negatives not allowed -1,-3", "-1,2,-3,4")]
         public void Add_WithNegativeNumbers(string expected, string numbers)
         {
             var stringCalculator = new StringCalculator();
