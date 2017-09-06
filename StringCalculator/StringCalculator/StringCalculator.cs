@@ -52,10 +52,13 @@ namespace StringCalculatorKata
         {
             var delimiter = lines[0].Substring(2);
 
-            if (!delimiter.Contains("[")) return delimiter.Split();
-            var pattern = @"\[(.*?)\]";
+            if (delimiter.Contains("[") && delimiter.Contains("]"))
+            {
+                var pattern = @"\[(.*?)\]";
 
-            return Regex.Matches(delimiter, pattern).Cast<Match>().Select(m => m.Groups[1].Value).ToArray();
+                return Regex.Matches(delimiter, pattern).Cast<Match>().Select(m => m.Groups[1].Value).ToArray();
+            }
+            return delimiter.Split();
         }
     }
 }

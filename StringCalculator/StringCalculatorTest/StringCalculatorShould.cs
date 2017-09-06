@@ -30,18 +30,20 @@ namespace StringCalculatorTest
 
         [Theory]
         [InlineData(3, "//;\n1;2")]
-        //[InlineData(6, "//[\n1[2[3")]
+        [InlineData(6, "//[\n1[2[3")]
         public void Add_CustomDelimiter(int expected, string numbers)
         {
             var stringCalculator = new StringCalculator();
             Assert.Equal(expected, stringCalculator.Add(numbers));
         }
 
-        [Fact]
-        public void Add_AnyLengthDelimiter()
+        [Theory]
+        [InlineData(6, "//[***]\n1***2***3")]
+        [InlineData(10, "//[***][$][%%]\n1***2$3%%4")]
+        public void Add_AnyLengthDelimiter(int expected, string numbers)
         {
             var stringCalculator = new StringCalculator();
-            Assert.Equal(6, stringCalculator.Add("//[***]\n1***2***3"));
+            Assert.Equal(expected, stringCalculator.Add(numbers));
         }
     }
 }
