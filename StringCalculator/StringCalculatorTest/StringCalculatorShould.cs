@@ -23,16 +23,25 @@ namespace StringCalculatorTest
         [Fact]
         public void Add_NewLineDelimiter()
         {
-            var delimiters = new[] {',', '\n'};
+            var delimiters = new[] {",", "\n"};
             var stringCalculator = new StringCalculator(delimiters);
             Assert.Equal(6, stringCalculator.Add("1\n2,3"));
         }
 
-        [Fact]
-        public void Add_CustomDelimiter()
+        [Theory]
+        [InlineData(3, "//;\n1;2")]
+        //[InlineData(6, "//[\n1[2[3")]
+        public void Add_CustomDelimiter(int expected, string numbers)
         {
             var stringCalculator = new StringCalculator();
-            Assert.Equal(3, stringCalculator.Add("//;\n1;2"));
+            Assert.Equal(expected, stringCalculator.Add(numbers));
+        }
+
+        [Fact]
+        public void Add_AnyLengthDelimiter()
+        {
+            var stringCalculator = new StringCalculator();
+            Assert.Equal(6, stringCalculator.Add("//[***]\n1***2***3"));
         }
     }
 }
