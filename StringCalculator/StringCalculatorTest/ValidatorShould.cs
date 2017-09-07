@@ -12,7 +12,7 @@ namespace StringCalculatorTest
         [ExpectedException(typeof(NegativeNumberException))]
         public void NegativeCheck_WithMultiNegativeNumbers()
         {
-            var validator = new Validator();
+            var validator = new ValidatorOne(1000);
 
             var numbers = new List<int>(){ -1, 2, -3 };
             var expected = "negatives not allowed -1,-3";
@@ -38,7 +38,7 @@ namespace StringCalculatorTest
         [Fact]
         public void IgnoreBigNumbers_WithNumberOver1k()
         {
-            var validator = new Validator();
+            var validator = new ValidatorOne(1000);
             
             var numbers = new List<int>(){999, 1000, 1001};
             var expected = new List<int>() {999, 1000};
