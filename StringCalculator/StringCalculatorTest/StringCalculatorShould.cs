@@ -31,6 +31,7 @@ namespace StringCalculatorTest
         [Theory]
         [InlineData(3, "//;\n1;2")]
         [InlineData(6, "//[\n1[2[3")]
+        [InlineData(6, "//\n\n1\n2\n3")]
         public void Add_CustomDelimiter(int expected, string numbers)
         {
             var stringCalculator = new StringCalculator();
